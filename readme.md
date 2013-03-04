@@ -2,7 +2,9 @@
 
 Pocket is a stripped back PHP HMVC Framework primarily developed to help developers make the jump from writing tightly coupled spaghetti  to organised, rusable, modular code.
 
-You will not find copious libraries to help deal with authentication, validation, benchmarking and the like, instead a framework that will 
+You will not find copious libraries to help deal with authentication, validation, benchmarking and the like, instead a framework that will... 
+
+[More info coming soon] 
 
 ## Install
 
