@@ -1,27 +1,15 @@
 # Pocket
 
-Pocket is a stripped back PHP HMVC Framework primarily developed to help developers make the jump from writing tightly coupled spaghetti  to organised, rusable, modular code.
+Pocket is **a stripped back PHP HMVC Framework** with a focus on helping developers jump from writing tightly coupled spaghetti to organised, re-usable, modular code. You'll **get to grips in minutes** not days, that can't be bad can it!
 
-You will not find copious libraries to help deal with authentication, validation, benchmarking and the like, instead a framework that will... 
+**No libraries.. are you serious?** Yup that's right! You won't find rich libraries for authentication, validation, benchmarking etc, well, not out of the box anyway** Why not? Well... If you're not familiar with routing, models, views and controllers then you've got enough to be thinking about and all those libraries that might not even be used will just add unnecessary 'noise' making it even more difficult for you to grasp. 
 
-[More info coming soon] 
+** Pocket libraries will be written in due course where they'll drop right into your Pocket instance, until then roll your own or find something on GitHub!
 
 ## Install
 
-To install Pocket just download the source and deploy to your server, the framework ships with a default module that works out of the box ready to handle requests.
+To install Pocket just download the source and deploy to your server, the framework deploys with a default module (Hello world example) ready to handle requests right away.
 
-## Config
+Once deployed to your chosen environment you'll probably want to [checkout the Wiki][wiki] for documentation (don't worry it's super simple).
 
-## Environments
-
-## Routing
-
-## Controller
-
-## Model
-
-## View
-
-
-
-
+[wiki]: https://github.com/philmmoore/Pocket/wiki
