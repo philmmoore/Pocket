@@ -1,6 +1,6 @@
 <?php
  	
-	include $base_dir.'../system/config/globals.php';
+	include $base_dir.'../system/config/constants.php';
 	define('TEST_APP_DIR', $base_dir.'../'.APP_DIR);
 	define('TEST_SYSTEM_DIR', $base_dir.'../'.SYSTEM_DIR);
 
