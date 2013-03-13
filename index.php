@@ -18,4 +18,6 @@
 	
 	Pocket::executeRequest();
 
+	// Some comment
+
 ?>
