@@ -21,11 +21,14 @@
 		}
 
 		public function load(){
+	
+			if ($this->options['data']){
+				$data = $this->options['data'];
+				extract($data);
+				unset($this->options['data']);
+			}			
 
-			$data = $this->options['data'];
-			extract($data);
-			
-			// View data
+			// Parse View data
 			$this->options = json_decode(json_encode($this->options));
 
 			// Header 
