@@ -10,7 +10,7 @@
 	<script src="/<?= STATIC_DIR.'/js'; ?>/html5shiv.js"></script>
 	<![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="/<?= STATIC_DIR.'/css/styles.css'; ?>" />
+    <link rel="stylesheet" type="text/css" href="<?= Versioning::auto(STATIC_DIR.'/css/styles.css'); ?>" />
     <link rel="shortcut icon" href="/<?= STATIC_DIR; ?>/images/fav.ico" />
 
 </head>
