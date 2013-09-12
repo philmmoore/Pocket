@@ -383,7 +383,7 @@ FileETag None
 
  <IfModule mod_rewrite.c>
    RewriteCond %{HTTPS} !=on
-   RewriteCond %{HTTP_HOST} !^(www|staging)\..+$ [NC]
+   RewriteCond %{HTTP_HOST} !^(www|staging|local)\..+$ [NC]
    RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
  </IfModule>
 
