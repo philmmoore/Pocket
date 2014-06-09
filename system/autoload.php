@@ -1,15 +1,27 @@
 <?php
 
+	function getClassInfo($class){
+		$return = new stdClass;
+		$class = explode('\\', $class);
+		$num_parts = count($class);
+		$return->file = strtolower(end($class).'.php');
+		if ($num_parts > 1){
+			$return->module = strtolower($class[0]);
+			$return->namespace = '\\'.implode('\\', $class);
+		}
+		return $return;
+	}
 
 	function sys($class){
-		$file = SYSTEM_DIR.'/'.strtolower($class).'.php';
+		$class = getClassInfo($class);
+		$file = SYSTEM_DIR.'/'.$class->file;
 		if (is_file($file)){
 			include_once $file;
 		}
 	}
 
 	function module($class){
-		$file = APP_DIR.'/modules/'.Router::$route->module.'/controller.php';
+		$file = APP_DIR.'/modules/'.\PocketFramework\Router::$route->module.'/controller.php';
 		if (is_file($file)){
 			include_once $file;
 		}
@@ -23,9 +35,13 @@
 	}
 
 	function models($class){
-		$file = APP_DIR.'/modules/'.Router::$route->module.'/models/'.strtolower($class).'.php';
-		if (is_file($file)){
-			include_once $file;
+
+		$class = getClassInfo($class);
+
+		if (is_file(APP_DIR.'/modules/'.\PocketFramework\Router::$route->module.'/models/'.$class->file)){
+			include_once APP_DIR.'/modules/'.\PocketFramework\Router::$route->module.'/models/'.$class->file;
+		} else if (APP_DIR.'/modules/'.$class->module.'/models/'.$class->file) {
+			include_once APP_DIR.'/modules/'.$class->module.'/models/'.$class->file;
 		} else {
 
 			$ignore = array('.','..');
@@ -34,7 +50,7 @@
 			foreach ($dirs as $dir){
 				if (is_dir($base.'/'.$dir) && !in_array($dir, $ignore)){
 
-					$file = $base.'/'.$dir.'/models/'.strtolower($class).'.php';
+					$file = $base.'/'.$dir.'/models/'.$class->file.'.php';
 					if (is_file($file)){
 						include_once $file;
 					}

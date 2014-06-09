@@ -1,5 +1,7 @@
 <?php 
 
+	namespace PocketFramework;
+
 	class Pocket {
 
 		public static $config;
@@ -7,7 +9,7 @@
 		public static function setRoute($route, $options=''){
 
 			if (!isset($options['module'])){
-				$options['module'] = 'default';
+				$options['module'] = 'root';
 			}			
 
 			if ($route == '/' && !isset($options['action'])){
@@ -104,7 +106,7 @@
 			 */
 
 			try {
-				new Router((isset($_GET['request']) ? $_GET['request'] : ''), self::$config);
+				new \PocketFramework\Router((isset($_GET['request']) ? $_GET['request'] : ''), self::$config);
 			} catch (Exception $e){				
 				echo $e->getMessage();
 			}

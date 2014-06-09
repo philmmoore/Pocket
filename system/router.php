@@ -1,5 +1,7 @@
 <?php 
 
+	namespace PocketFramework;
+
 	class Router {
 
 		public $request;
@@ -34,7 +36,7 @@
 
 			} 
 
-			Http_Header::status(404);
+			\PocketFramework\Http_Header::status(404);
 
 			if ($this->config->debug == true){
 				throw new Exception('Route not found.');
@@ -73,7 +75,7 @@
 			
 			} else {
 				
-				Http_Header::status(404);
+				\PocketFramework\Http_Header::status(404);
 
 				if ($this->config->debug == true){
 					throw new Exception('Method not found.');

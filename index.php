@@ -1,5 +1,5 @@
 <?php
- 	
+
 	/**
 	 * Load Pocket dependencies
 	 */
@@ -10,12 +10,12 @@
 	 * Set current environment config file
 	 */
 	
-	Pocket::setEnvironment($_SERVER['SERVER_NAME']);
+	\PocketFramework\Pocket::setEnvironment($_SERVER['SERVER_NAME']);
 
 	/**
 	 * Execute request
 	 */
 	
-	Pocket::executeRequest();
+	\PocketFramework\Pocket::executeRequest();
 
 ?>

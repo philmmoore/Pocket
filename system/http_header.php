@@ -1,5 +1,7 @@
 <?php 
 
+	namespace PocketFramework;
+
 	class Http_Header {
 
 		public static $status = array(

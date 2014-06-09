@@ -1,5 +1,7 @@
 <?php 
 
+	namespace PocketFramework;
+
 	class View {
 
 		public $options;
@@ -8,8 +10,8 @@
 
 			$defaults = array(
 				'inc_header_footer' => true,
-				'header' => (Pocket::$config->defaults->view->header ? Pocket::$config->defaults->view->header : ''),
-				'footer' => (Pocket::$config->defaults->view->footer ? Pocket::$config->defaults->view->footer : '')
+				'header' => (\PocketFramework\Pocket::$config->defaults->view->header ? \PocketFramework\Pocket::$config->defaults->view->header : ''),
+				'footer' => (\PocketFramework\Pocket::$config->defaults->view->footer ? \PocketFramework\Pocket::$config->defaults->view->footer : '')
 			);
 
 			$this->options = $defaults;
@@ -43,8 +45,8 @@
 
 			// View
 
-			if (!include_once APP_DIR.'/modules/'.Router::$route->module.'/views/'.$this->options->view){
-				throw new Exception('View "'.APP_DIR.'/modules/'.Router::$route->module.'/views/'.$this->options->view.'" not found');
+			if (!include_once APP_DIR.'/modules/'.\PocketFramework\Router::$route->module.'/views/'.$this->options->view){
+				throw new Exception('View "'.APP_DIR.'/modules/'.\PocketFramework\Router::$route->module.'/views/'.$this->options->view.'" not found');
 			}
 
 			// Footer
