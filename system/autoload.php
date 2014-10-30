@@ -52,8 +52,6 @@
 				if (is_dir($base.'/'.$dir) && !in_array($dir, $ignore)){
 
 					$file = $base.'/'.$dir.'/models/'.$class->file;
-
-					echo $file;
 					if (is_file($file)){
 						include_once $file;
 					}
