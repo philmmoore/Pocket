@@ -40,7 +40,7 @@
 
 		if (is_file(APP_DIR.'/modules/'.\PocketFramework\Router::$route->module.'/models/'.$class->file)){
 			include_once APP_DIR.'/modules/'.\PocketFramework\Router::$route->module.'/models/'.$class->file;
-		} else if (APP_DIR.'/modules/'.$class->module.'/models/'.$class->file) {
+		} else if (is_file(APP_DIR.'/modules/'.$class->module.'/models/'.$class->file)) {
 			include_once APP_DIR.'/modules/'.$class->module.'/models/'.$class->file;
 		} else {
 
@@ -48,9 +48,12 @@
 			$base = APP_DIR.'/modules';
 			$dirs = scandir($base);
 			foreach ($dirs as $dir){
+
 				if (is_dir($base.'/'.$dir) && !in_array($dir, $ignore)){
 
-					$file = $base.'/'.$dir.'/models/'.$class->file.'.php';
+					$file = $base.'/'.$dir.'/models/'.$class->file;
+
+					echo $file;
 					if (is_file($file)){
 						include_once $file;
 					}
