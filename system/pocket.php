@@ -59,7 +59,7 @@
 
 				} else {
 					
-					throw new Exception('Could not locate default configuration file "'.$file.'"');
+					throw new \Exception('Could not locate default configuration file "'.$file.'"');
 					
 				}
 
@@ -78,7 +78,7 @@
 
 					} else {
 						
-						throw new Exception('Could not locate environment ('.$server.') configuration file "'.$file.'"');
+						throw new \Exception('Could not locate environment ('.$server.') configuration file "'.$file.'"');
 						
 					}
 
@@ -131,7 +131,7 @@
 					echo "</pre>";
 				break;
 				default: 
-					throw new Exception('Debug method "'.$method.'" not found.');
+					throw new \Exception('Debug method "'.$method.'" not found.');
 				break;
 			}
 
