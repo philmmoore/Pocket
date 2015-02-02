@@ -6,12 +6,12 @@
 
 		public static function mysqli(){
 
-			if (!Pocket::$config->database){
+			if (!\PocketFramework\Pocket::$config->database){
 				throw new Exception('Database connection details must be specified to use the database object');
 				die();
 			}
 
-			self::$options = Pocket::$config->database;
+			self::$options = \PocketFramework\Pocket::$config->database;
 
 			return new mysqli(
 				self::$options->host,
